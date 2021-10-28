@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import App from './App'
-import request from '@/utils/request'
-import date from '@/utils/dateFormat'
 import minxins from '@/utils/minxins'
 // 导航组件
 import cuCustom from '@/colorui/components/cu-custom'
@@ -23,7 +21,6 @@ Vue.prototype.toast = (str, duration) => {
     duration: duration || 2000
   })
 }
-Vue.prototype.date = date
 Vue.prototype.alert = (str, option) => {
   let msg = typeof str === 'object' ? JSON.stringify(str) : typeof str === 'string' ? str : ''
   let op = option || {}
@@ -113,9 +110,3 @@ Vue.prototype.SDKVersion = uni.getSystemInfoSync().SDKVersion || '0'
 // Vue.prototype.isNewVersion = Vue.prototype.compareVersion(Vue.prototype.SDKVersion, '2.10.3') > 0
 Vue.prototype.isNewVersion = !!wx.getUserProfile
 console.log(Vue.prototype.isNewVersion, Vue.prototype.SDKVersion, 'isReqV2')
-
-Vue.prototype.request = request
-// 时间组件
-for (let i in date) {
-  Vue.prototype[i] = date[i]
-}
