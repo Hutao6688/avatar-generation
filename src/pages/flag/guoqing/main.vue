@@ -114,7 +114,7 @@ export default {
         sanDWanshengjie: [
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie17.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie19.png"},
-          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie29.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie20.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie21.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie09.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie10.png"},
