@@ -67,7 +67,11 @@ export default {
           name: "万圣节"
         },
         {
-          id: "sanDwanjie",
+          id: "kaTongWanshengjie",
+          name: "卡通万圣节"
+        },
+        {
+          id: "sanDWanshengjie",
           name: "3D万圣节"
         },
         // {
@@ -93,16 +97,25 @@ export default {
       ],
       assetsList: {
         wanshengjie: [
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie05.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie06.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie07.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie08.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie16.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie15.png"}
+        ],
+        kaTongWanshengjie: [
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie01.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie02.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie03.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie04.png"},
-          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie05.png"},
-          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie06.png"},
-          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie07.png"},
-          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie08.png"}
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie18.png"}
         ],
-        sanDwanjie: [
+        sanDWanshengjie: [
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie17.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie19.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie29.png"},
+          {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie21.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie09.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie10.png"},
           {src: "https://oss-img.gaocaipeng.com/guoqi/img/wanshengjie/wanshengjie11.png"},
@@ -177,15 +190,21 @@ export default {
     let that = this;
     uni.getSystemInfo({
       success(res) {
-        let height = res.windowHeight
-        if (height > 900) {
-          that.showHeight = 340
-        } else if (height > 850){
-          that.showHeight = 330
-        } else if (height > 700) {
-          that.showHeight = 300
-        } else if (height > 600) {
+        let screHeight = res.screenHeight
+        console.log(res)
+        if (screHeight >= 736) {
+          let statusBarHeight = res.statusBarHeight
+          let isSupport = !!uni.getMenuButtonBoundingClientRect
+          let custom = isSupport ? uni.getMenuButtonBoundingClientRect() : null
+          let height = custom.bottom + custom.top - statusBarHeight
+          let CustomBar = height < 50 ? statusBarHeight + custom.bottom + custom.top : height
+          let width = res.windowWidth
+          let scale = width / 375
+          that.showHeight = (scale * 340) - CustomBar
+        } else if (screHeight > 640 && screHeight < 736) {
           that.showHeight = 240
+        } else if (screHeight > 600 && screHeight <= 640) {
+          that.showHeight = 210
         } else {
           that.showHeight = 140
         }
