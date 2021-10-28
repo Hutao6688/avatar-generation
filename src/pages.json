@@ -1,0 +1,26 @@
+{
+  "pages": [
+    {
+      "path": "pages/flag/guoqing/main",
+      "style": {
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/flag/crop/main",
+      "style": {
+        "disableScroll": true
+      }
+    }
+  ],
+  "globalStyle": {
+    "usingComponents":{
+      "image-cropper": "/static/wxcomponents/image-cropper/image-cropper"
+    },
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "renderingMode": "seperated",
+    "pageOrientation": "portrait"
+  },
+  "sitemapLocation": "sitemap.json"
+}

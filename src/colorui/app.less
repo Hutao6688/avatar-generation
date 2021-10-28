@@ -1,0 +1,148 @@
+@import "./main.css";
+@import "./icon.css";
+@import "./iconfont.css";
+@import "./animation.css";
+* {
+  transition: width 2s;
+  -moz-transition: width 2s;
+  -webkit-transition: width 2s;
+  -o-transition: width 2s;
+  -webkit-overflow-scrolling: touch;
+}
+// 改写小程序原生样式
+page {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  font-family: PingFangSC, Helvetica Neue, Helvetica, sans-serif;
+  color: #333;
+}
+checkbox, radio {
+  &::before{
+    display: none;
+  }
+  .wx-checkbox-input, .wx-radio-input{
+    border-radius: 32rpx;
+    height: 44rpx;
+    width: 44rpx;
+    margin-top: -8rpx;
+    border: 2rpx solid #C9C9C9;
+  }
+  &[checked] {
+    .wx-checkbox-input, .wx-radio-input{
+      background-color: #fff !important;
+      border-color: #fff !important;
+      color: #ffffff !important;
+    }
+    &::before{
+      display: block;
+      font-family: "iconfont" !important;
+      content: "\e62d";
+      color: #F90 !important;
+      font-size: 44rpx;
+      left: 0;
+    }
+  }
+}
+.bg-gradual-orange {
+  background: linear-gradient(97.71deg, #ffa462, #ff4d42 88.36%);
+  color: #fff;
+}
+.bg-gradual-white {
+  background: #fff;
+}
+.bg-gradual-opcity {
+  background: rgba(255, 255, 255, 0.2);
+}
+.cu-custom {
+  min-height: 58px;
+  .cu-bar  {
+    min-height: 58px;
+    padding-top: 20px;
+    .content {
+      top: 20px;
+    }
+  }
+  .cu-bar.shadow {
+    box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
+  }
+  .action {
+    .iconfont {
+      &.iconjiantou_zuo {
+        width: 70rpx;
+        font-size: 36rpx;
+      }
+    }
+  }
+}
+// 隐藏scroll-view滚动条
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+// 自定义样式
+.bg-main {
+  border-radius: 8rpx;
+  color: #fff;
+  background-image: linear-gradient(45deg, #f90, #FFAB04, #ffc800);
+  box-shadow: 0rpx 12rpx 24rpx rgba(255, 187, 0, .3);
+  font-weight: 500;
+  &::after {
+    border: none;
+  }
+  &.button-hover,
+  &.disable {
+    background: #fdcf90;
+    transform: translate(0rpx, 0rpx);
+  }
+}
+.loading-top {
+  width: 34rpx;
+  height: 34rpx;
+  animation: cuIcon-spin 1s linear 0s infinite;
+}
+.iconloading, .iconloadingspinner {
+  // display: block;
+  text-align: center;
+  &::before {
+    display: inline-block;
+    margin-right: 6rpx;
+    // color: #999;
+    animation: cuIcon-spin 1s infinite linear;
+  }
+}
+.placeholder-color {
+  color: #c1c1c1;
+}
+@keyframes loading {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+// 自定义动画
+@keyframes cuIcon-spin {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+@keyframes twinkling{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: .8;
+  }
+  100%{
+    opacity: 0;
+  }
+}

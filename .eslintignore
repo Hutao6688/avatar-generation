@@ -1,0 +1,6 @@
+build/*.js
+config/*.js
+src/utils/*.js
+src/utils/aldsdk/*.js
+src/colorui/
+src/lib/

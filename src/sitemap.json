@@ -1,0 +1,16 @@
+{
+  "rules":[{
+    "action": "allow",
+    "page": "pages/cms/article-list/main",
+    "params": ["page", "category"],
+    "matching": "inclusive"
+  }, {
+    "action": "allow",
+    "page": "pages/cms/article-detail/main",
+    "params": ["id"],
+    "matching": "inclusive"
+  }, {
+    "action": "allow",
+    "page": "*"
+  }]
+}
